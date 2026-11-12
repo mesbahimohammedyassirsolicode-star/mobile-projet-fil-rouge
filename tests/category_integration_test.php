@@ -5,6 +5,7 @@ require dirname(__DIR__) . '/bootstrap.php';
 
 use App\Config\Database;
 use App\Daos\CategorieDAO;
+use App\Models\Categorie;
 use App\Services\CategorieService;
 
 function assertCategory(bool $condition, string $message): void
@@ -26,6 +27,12 @@ if ($connection->getAttribute(PDO::ATTR_DRIVER_NAME) === 'sqlite') {
 }
 
 $service = new CategorieService(new CategorieDAO($connection));
+$model = Categorie::fromArray([
+    'id_categorie' => 7,
+    'nom' => 'Model category',
+    'description' => 'Model description',
+]);
+assertCategory($model->id === 7 && $model->nom === 'Model category', 'Categorie model should map database rows.');
 $initialCategories = $service->getAll();
 assertCategory(is_array($initialCategories), 'getAll() should return categories.');
 
