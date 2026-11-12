@@ -1,14 +1,278 @@
 {
-    "utilisateur": [],
-    "destination": [],
-    "categorie": [],
-    "lieu_touristique": [],
-    "activite": [],
-    "favori_lieu": [],
-    "favori_activite": [],
-    "avis_lieu": [],
-    "avis_activite": [],
-    "voyage": [],
-    "etape_lieu": [],
-    "etape_activite": []
+    "utilisateur": [
+        {
+            "id_utilisateur": 1,
+            "nom": "Benali",
+            "prenom": "Sara",
+            "email": "sara.benali@example.com",
+            "mot_de_passe": "$2y$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+            "telephone": "+212600000001",
+            "date_naissance": "1995-04-12",
+            "photo": "assets\/images\/users\/sara-benali.jpg",
+            "date_inscription": "2026-01-15 09:30:00"
+        },
+        {
+            "id_utilisateur": 2,
+            "nom": "Martin",
+            "prenom": "Lucas",
+            "email": "lucas.martin@example.com",
+            "mot_de_passe": "$2y$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+            "telephone": "+33612000002",
+            "date_naissance": "1990-09-28",
+            "photo": "assets\/images\/users\/lucas-martin.jpg",
+            "date_inscription": "2026-02-02 14:15:00"
+        }
+    ],
+    "destination": [
+        {
+            "id_destination": 1,
+            "nom": "Marrakech",
+            "description": "Ville impériale connue pour sa médina, ses souks et ses jardins.",
+            "ville": "Marrakech",
+            "region": "Marrakech-Safi",
+            "pays": "Maroc",
+            "image": "assets\/images\/destinations\/marrakech.jpg",
+            "latitude": 31.6295,
+            "longitude": -7.9811
+        },
+        {
+            "id_destination": 2,
+            "nom": "Chefchaouen",
+            "description": "Destination de montagne célèbre pour ses ruelles bleues et son artisanat.",
+            "ville": "Chefchaouen",
+            "region": "Tanger-Tétouan-Al Hoceïma",
+            "pays": "Maroc",
+            "image": "assets\/images\/destinations\/chefchaouen.jpg",
+            "latitude": 35.1688,
+            "longitude": -5.2636
+        }
+    ],
+    "categorie": [
+        {
+            "id_categorie": 1,
+            "nom": "Culture",
+            "description": "Patrimoine, monuments, musées et traditions locales."
+        },
+        {
+            "id_categorie": 2,
+            "nom": "Nature",
+            "description": "Paysages, jardins, randonnées et espaces naturels."
+        }
+    ],
+    "lieu_touristique": [
+        {
+            "id_lieu": 1,
+            "nom": "Jardin Majorelle",
+            "description": "Un jardin botanique emblématique au coeur de Marrakech.",
+            "adresse": "Rue Yves Saint Laurent, Marrakech",
+            "prix_entree": 150,
+            "horaires": "08:30-18:00",
+            "image": "assets\/images\/places\/jardin-majorelle.jpg",
+            "latitude": 31.6416,
+            "longitude": -8.0033,
+            "id_destination": 1,
+            "id_categorie": 2
+        },
+        {
+            "id_lieu": 2,
+            "nom": "Palais Bahia",
+            "description": "Un palais historique remarquable par ses patios et son architecture.",
+            "adresse": "Rue Riad Zitoun el Jdid, Marrakech",
+            "prix_entree": 70,
+            "horaires": "09:00-17:00",
+            "image": "assets\/images\/places\/palais-bahia.jpg",
+            "latitude": 31.6218,
+            "longitude": -7.9837,
+            "id_destination": 1,
+            "id_categorie": 1
+        },
+        {
+            "id_lieu": 3,
+            "nom": "Kasbah de Chefchaouen",
+            "description": "Un ensemble historique au coeur de la médina bleue.",
+            "adresse": "Place Outa el Hammam, Chefchaouen",
+            "prix_entree": 20,
+            "horaires": "09:00-18:00",
+            "image": "assets\/images\/places\/kasbah-chefchaouen.jpg",
+            "latitude": 35.1686,
+            "longitude": -5.2631,
+            "id_destination": 2,
+            "id_categorie": 1
+        }
+    ],
+    "activite": [
+        {
+            "id_activite": 1,
+            "nom": "Atelier de cuisine marocaine",
+            "description": "Préparez un tajine traditionnel avec un chef local.",
+            "duree": 180,
+            "prix": 450,
+            "image": "assets\/images\/activities\/cuisine-marocaine.jpg",
+            "niveau": "Facile",
+            "id_destination": 1,
+            "id_categorie": 3
+        },
+        {
+            "id_activite": 2,
+            "nom": "Randonnée dans les montagnes du Rif",
+            "description": "Une randonnée guidée entre villages et panoramas du Rif.",
+            "duree": 300,
+            "prix": 280,
+            "image": "assets\/images\/activities\/randonnee-rif.jpg",
+            "niveau": "Intermédiaire",
+            "id_destination": 2,
+            "id_categorie": 2
+        },
+        {
+            "id_activite": 3,
+            "nom": "Visite guidée de la médina",
+            "description": "Découvrez les histoires et les monuments de la vieille ville.",
+            "duree": 150,
+            "prix": 180,
+            "image": "assets\/images\/activities\/visite-medina.jpg",
+            "niveau": "Facile",
+            "id_destination": 2,
+            "id_categorie": 1
+        }
+    ],
+    "favori_lieu": [
+        {
+            "id_favori_lieu": 1,
+            "date_ajout": "2026-03-01 10:00:00",
+            "id_utilisateur": 1,
+            "id_lieu": 1
+        },
+        {
+            "id_favori_lieu": 2,
+            "date_ajout": "2026-03-03 16:20:00",
+            "id_utilisateur": 2,
+            "id_lieu": 3
+        }
+    ],
+    "favori_activite": [
+        {
+            "id_favori_activite": 1,
+            "date_ajout": "2026-03-02 11:30:00",
+            "id_utilisateur": 1,
+            "id_activite": 1
+        },
+        {
+            "id_favori_activite": 2,
+            "date_ajout": "2026-03-04 09:45:00",
+            "id_utilisateur": 2,
+            "id_activite": 2
+        }
+    ],
+    "avis_lieu": [
+        {
+            "id_avis_lieu": 1,
+            "note": 5,
+            "commentaire": "Un jardin magnifique et très reposant.",
+            "date_avis": "2026-03-05 12:00:00",
+            "id_utilisateur": 1,
+            "id_lieu": 1
+        },
+        {
+            "id_avis_lieu": 2,
+            "note": 4,
+            "commentaire": "Très belle architecture, visite agréable.",
+            "date_avis": "2026-03-06 15:10:00",
+            "id_utilisateur": 2,
+            "id_lieu": 2
+        }
+    ],
+    "avis_activite": [
+        {
+            "id_avis_activite": 1,
+            "note": 5,
+            "commentaire": "Le chef était pédagogue et le repas délicieux.",
+            "date_avis": "2026-03-07 19:00:00",
+            "id_utilisateur": 1,
+            "id_activite": 1
+        },
+        {
+            "id_avis_activite": 2,
+            "note": 4,
+            "commentaire": "Belle randonnée avec des paysages superbes.",
+            "date_avis": "2026-03-08 17:30:00",
+            "id_utilisateur": 2,
+            "id_activite": 2
+        }
+    ],
+    "voyage": [
+        {
+            "id_voyage": 1,
+            "titre": "Escapade culturelle au Maroc",
+            "date_debut": "2026-04-10",
+            "date_fin": "2026-04-15",
+            "budget": 6500,
+            "description": "Un séjour entre jardins, palais et découvertes culinaires.",
+            "id_utilisateur": 1,
+            "id_destination": 1
+        },
+        {
+            "id_voyage": 2,
+            "titre": "Week-end bleu à Chefchaouen",
+            "date_debut": "2026-05-22",
+            "date_fin": "2026-05-24",
+            "budget": 2800,
+            "description": "Un week-end de randonnée et de découverte de la médina.",
+            "id_utilisateur": 2,
+            "id_destination": 2
+        }
+    ],
+    "etape_lieu": [
+        {
+            "id_etape_lieu": 1,
+            "date_etape": "2026-04-11",
+            "heure_debut": "10:00:00",
+            "heure_fin": "12:00:00",
+            "ordre": 1,
+            "notes": "Prévoir de l'eau et une protection solaire.",
+            "id_voyage": 1,
+            "id_lieu": 1
+        },
+        {
+            "id_etape_lieu": 2,
+            "date_etape": "2026-04-12",
+            "heure_debut": "09:30:00",
+            "heure_fin": "11:30:00",
+            "ordre": 2,
+            "notes": "Rendez-vous à l'entrée principale du palais.",
+            "id_voyage": 1,
+            "id_lieu": 2
+        },
+        {
+            "id_etape_lieu": 3,
+            "date_etape": "2026-05-23",
+            "heure_debut": "10:00:00",
+            "heure_fin": "12:00:00",
+            "ordre": 1,
+            "notes": "Visite libre de la kasbah.",
+            "id_voyage": 2,
+            "id_lieu": 3
+        }
+    ],
+    "etape_activite": [
+        {
+            "id_etape_activite": 1,
+            "date_etape": "2026-04-13",
+            "heure_debut": "15:00:00",
+            "heure_fin": "18:00:00",
+            "ordre": 3,
+            "notes": "Atelier suivi d'une dégustation.",
+            "id_voyage": 1,
+            "id_activite": 1
+        },
+        {
+            "id_etape_activite": 2,
+            "date_etape": "2026-05-23",
+            "heure_debut": "14:00:00",
+            "heure_fin": "19:00:00",
+            "ordre": 2,
+            "notes": "Chaussures de randonnée recommandées.",
+            "id_voyage": 2,
+            "id_activite": 2
+        }
+    ]
 }

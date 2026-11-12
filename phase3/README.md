@@ -45,16 +45,16 @@ tests/                Small executable PHP tests
 2. Start the backend API:
 
    ```sh
-   php -S localhost:8000 -t backend/public backend/public/router.php
+   php -S 127.0.0.1:8000 -t backend/public backend/public/router.php
    ```
 
 3. In another terminal, serve the independent frontend:
 
    ```sh
-   php -S localhost:5500 -t frontend
+   php -S 127.0.0.1:5500 -t frontend
    ```
 
-4. Open <http://localhost:5500/>.
+4. Open <http://127.0.0.1:5500/>.
 
 No MySQL server, database import, PDO extension, or environment variables are
 required.
@@ -114,7 +114,7 @@ php backend/public/index.php
 Example AJAX request:
 
 ```js
-fetch('http://localhost:8000/api/categories', {
+fetch('http://127.0.0.1:8000/api/categories', {
   headers: { Accept: 'application/json' }
 })
   .then((response) => response.json())
