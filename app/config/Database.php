@@ -23,9 +23,19 @@ final class Database
         $user = self::environment('DB_USER');
         $password = getenv('DB_PASS');
 
-        if ($user === null || $password === false) {
+        if (
+            $host === null
+            || $host === ''
+            || $port === null
+            || filter_var($port, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 65535]]) === false
+            || $name === null
+            || $name === ''
+            || $user === null
+            || $user === ''
+            || $password === false
+        ) {
             throw new RuntimeException(
-                'Database configuration is incomplete. Set DB_USER and DB_PASS in the process environment.'
+                'Invalid database configuration. Set non-empty DB_HOST, a valid DB_PORT, DB_NAME, DB_USER, and DB_PASS.'
             );
         }
 
@@ -52,7 +62,7 @@ final class Database
     {
         $value = getenv($key);
 
-        if ($value === false || $value === '') {
+        if ($value === false) {
             return $default;
         }
 

@@ -5,17 +5,28 @@ namespace App\Services;
 
 use App\Core\BaseService;
 use InvalidArgumentException;
+use PDOException;
 
 final class CategorieService extends BaseService
 {
     public function create(array $data): int
     {
-        return parent::create($this->validateCategoryData($data));
+        try {
+            return parent::create($this->validateCategoryData($data));
+        } catch (PDOException $exception) {
+            $this->rethrowDuplicateName($exception);
+            throw $exception;
+        }
     }
 
     public function update(int $id, array $data): bool
     {
-        return parent::update($id, $this->validateCategoryData($data));
+        try {
+            return parent::update($id, $this->validateCategoryData($data));
+        } catch (PDOException $exception) {
+            $this->rethrowDuplicateName($exception);
+            throw $exception;
+        }
     }
 
     private function validateCategoryData(array $data): array
@@ -29,7 +40,7 @@ final class CategorieService extends BaseService
             throw new InvalidArgumentException('Category name cannot be empty.');
         }
 
-        if (strlen($name) > 50) {
+        if ($this->characterLength($name) > 50) {
             throw new InvalidArgumentException('Category name cannot exceed 50 characters.');
         }
 
@@ -44,5 +55,23 @@ final class CategorieService extends BaseService
         }
 
         return $data;
+    }
+
+    private function rethrowDuplicateName(PDOException $exception): void
+    {
+        if ($exception->getCode() === '23000') {
+            throw new InvalidArgumentException('A category with this name already exists.', 0, $exception);
+        }
+    }
+
+    private function characterLength(string $value): int
+    {
+        $length = preg_match_all('/./us', $value);
+
+        if ($length === false) {
+            throw new InvalidArgumentException('Category name must contain valid UTF-8 text.');
+        }
+
+        return $length;
     }
 }
