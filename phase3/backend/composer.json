@@ -1,0 +1,18 @@
+{
+    "name": "smart-tourism/backend",
+    "description": "Smart Tourism PHP backend",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\Config\\": "config/",
+            "App\\Core\\": "classes/",
+            "App\\Models\\": "classes/models/",
+            "App\\Daos\\": "Dao/",
+            "App\\Services\\": "services/",
+            "App\\Data\\": "data/"
+        }
+    }
+}

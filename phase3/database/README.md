@@ -1,10 +1,5 @@
-# Database
+# Legacy schema reference
 
-`smart_tourism.sql` contains the existing Smart Tourism schema. Phase 1 does
-not modify the agreed tables or add seed data.
-
-Import it with:
-
-```sh
-mysql -u root -p < database/smart_tourism.sql
-```
+`smart_tourism.sql` is retained as a reference for the original table and
+field names. The current API does not execute this file or use a database.
+Runtime data is stored in `backend/data/smart_tourism.json`.
