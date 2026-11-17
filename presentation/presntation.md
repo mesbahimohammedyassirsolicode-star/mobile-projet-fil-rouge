@@ -266,9 +266,10 @@ MySQL · `smart_tourism`
 
 ---
 
+<!-- _class: image-only -->
 ## Maquettes
 
-<!-- À remplacer par les images des maquettes -->
+![Maquette de la plateforme Smart Tourism](images/maquettes.png)
 
 ---
 
